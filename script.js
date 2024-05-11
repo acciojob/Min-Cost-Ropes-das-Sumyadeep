@@ -2,27 +2,21 @@ function mincost(arr)
 { 
 //write your code here
 // return the min cost
-	let pq = [];
 
-	for (let i = 0; i < n; i++) {
-        pq.push(arr[i]);
-    }    
-         
-	
-	pq.sort(function(a,b){return a-b;});
+	arr.sort(function(a,b){return a-b;});
 
 	let res = 0;
 	
-	while(pq.length > 1){
+	while(arr.length > 1){
 
-		let first = pq.shift();
-		let second = pq.shift();
+		let first = arr.shift();
+		let second = arr.shift();
 
 		res += first + second;
 
-		pq.push(first + second);
+		arr.push(first + second);
 
-		pq.sort(function(a,b){return a-b;});
+		arr.sort(function(a,b){return a-b;});
 
 	}
 
