@@ -4,11 +4,12 @@ function mincost(arr)
 // return the min cost
 	let pq = [];
 
-	for(let x of arr){
-		pq.push(x);
-	}
+	for (let i = 0; i < n; i++) {
+        pq.push(arr[i]);
+    }    
+         
 	
-	pq.sort();
+	pq.sort(function(a,b){return a-b;});
 
 	let res = 0;
 	
@@ -21,7 +22,7 @@ function mincost(arr)
 
 		pq.push(first + second);
 
-		pq.sort();
+		pq.sort(function(a,b){return a-b;});
 
 	}
 
